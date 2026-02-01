@@ -1,12 +1,7 @@
 {
-  "name": "valentines-2026-proposal",
-  "domain": "play.novyrix.com",
-  "version": "1.0.0",
-  "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "outputDirectory": ".next",
   "env": {
     "DATABASE_URL": "@database_url",
     "POSTGRES_URL": "@postgres_url",
