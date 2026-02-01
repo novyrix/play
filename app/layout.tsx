@@ -23,7 +23,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Be Mine - Valentine's Day 2026 💕",
   description: "A charming Valentine's Day proposal by Novyrix",
-  authors: [{ name: "Novyrix", email: "spira@novyrix.com" }],
+  authors: [{ name: "Novyrix" }],
 };
 
 export default function RootLayout({
