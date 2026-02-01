@@ -1,20 +1,32 @@
-# Be Mine - Valentine's Day 2026 💕
+# Valentine's Day 2026 Proposal App 💕
 
-A highly interactive, slightly chaotic, and undeniably charming Valentine's Day proposal web application built with Next.js.
+A romantic, interactive web experience designed to capture your girlfriend's heart on Valentine's Day 2026. Built with Next.js, TypeScript, and crafted with love by **Spira**.
 
 **Author:** spira@novyrix.com  
 **Organization:** Novyrix  
-**Repository:** https://github.com/novyrix/play.git
+**Repository:** https://github.com/novyrix/play.git  
+**Live URL:** https://play.novyrix.com
 
-## 🎯 Project Overview
+## 🌟 Features
 
-Project "Be Mine" is designed to secure a "Yes" for Valentine's Day 2026 through an engaging digital interface featuring:
+### 8-Phase Interactive Journey
+1. **Landing Page** - Simple terms acceptance
+2. **Question Phase** - YES/NO buttons with mobile shake animation
+3. **Rejection Page** - Guilt-trip persuasion after 3 NO attempts
+4. **Identity Preloader** - "YESSS! But are you HER?"
+5. **Identity Verification** - Quiz with afro music, chocolate, fashion questions + fake fingerprint scanner
+6. **Wrong Identity Rejection** - "Naaaah, you are not the one!"
+7. **Date Builder** - Dinner and beverage selection
+8. **Music Phase** - Ed Sheeran's "Photograph" with dancing GIF
 
-- **Unclickable "No" Button**: Uses clever JavaScript to make the "No" button jump away when approached
-- **Dynamic Compliment Engine**: Generates new romantic compliments on demand
-- **Interactive Date Builder**: A fun, low-pressure scheduling tool for planning the perfect date
-- **Celebration Effects**: Confetti animation when she says "Yes!"
-- **GIF Integration**: Strategic placement of charming GIFs throughout the experience
+### Technical Highlights
+- 🎨 Romantic fonts: Great Vibes, Pacifico, Poppins
+- 📱 Mobile-first design (100vh pages)
+- 📳 Viewport shake + vibration on NO button
+- 🎉 Confetti celebration
+- 🎵 Spotify music integration
+- 💝 Identity verification quiz
+- 🔒 Fingerprint scanner simulation
 
 ## 🚀 Tech Stack
 
@@ -41,98 +53,71 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000) to see the magic! ✨
 
-## 🎨 Features
+## 🗄️ Database Setup
 
-### Phase 1: Landing Page
-- Official-looking header: "Official Proposal for Collaborative Romantic Engagement"
-- Terms & Conditions checkbox with the agreement: "I agree to be showered with affection and snacks"
-- Nervous cat GIF to set the cute tone
+This project uses **Neon PostgreSQL**. The database credentials are configured in `.env.local`:
 
-### Phase 2: The Question
-- Large, pulsing "YES" button
-- Elusive "No" button that moves away on hover
-- Dynamic compliment generator that shows a new romantic message on each click
-- Puss in Boots eyes GIF for maximum charm
+```bash
+DATABASE_URL=postgresql://neondb_owner:npg_CoUPZS8i4wtR@ep-bitter-hall-ah4izwgx-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require
+```
 
-### Phase 3: Date Builder
-- **Dinner Protocol Options**:
-  - 🍷 Fancy & Overpriced
-  - 🌮 Tacos & Sweatpants
-  - 👨‍🍳 I'll Cook (God help us)
+## 🌐 Production Deployment
 
-- **Beverage Tier Options**:
-  - 🍷 Wine
-  - 💧 Sparkling Water
-  - 🧃 A very specific juice box
+### Deploy to Vercel
+1. Connect your GitHub repository to Vercel
+2. Set custom domain: **play.novyrix.com**
+3. Add environment variables from `.env.local`
+4. Deploy! 🚀
 
-- Happy dance GIF celebration
+### Environment Variables
+Make sure to add these to your deployment platform:
+- `DATABASE_URL`
+- `POSTGRES_URL`
+- `POSTGRES_PRISMA_URL`
 
-### Phase 4: Success Modal
-- Confetti explosion animation
-- Celebration GIF from The Office
-- Summary of the date plan
-- "Mission Accomplished" message
+## 📦 Tech Stack
 
-## 🎭 GIF Placement Strategy
+- **Framework**: Next.js 16.1.6 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Database**: Neon PostgreSQL
+- **Animations**: canvas-confetti, custom CSS
+- **Fonts**: Google Fonts (Great Vibes, Pacifico, Poppins)
 
-| Event | GIF Theme | Purpose |
-|-------|-----------|---------|
-| Page Load | Nervous cat | Sets cute, anticipatory tone |
-| Question Page | Puss in Boots eyes | Maximum charm factor |
-| Hovering "Yes" | (Positive vibes) | Positive reinforcement |
-| Hovering "No" | (Moves away!) | Adds to unclickable joke |
-| Date Builder | Happy dance (Carlton) | Celebrates the "Yes" |
-| Success Modal | Office celebration | Peak "Mission Accomplished" |
-
-## 📁 Project Structure
+## 🎯 Project Structure
 
 ```
 play/
 ├── app/
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx            # Home page
-│   └── globals.css         # Global styles
+│   ├── layout.tsx          # Root layout with fonts
+│   ├── page.tsx            # Main page
+│   ├── globals.css         # Global styles
+│   └── animations.css      # Custom animations
 ├── components/
-│   ├── ui/                 # shadcn/ui components
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── checkbox.tsx
-│   │   └── dialog.tsx
-│   └── ValentineProposal.tsx  # Main interactive component
-├── lib/
-│   └── utils.ts            # Utility functions
-├── public/                 # Static assets
-└── package.json
+│   ├── ValentineProposal.tsx   # Main 8-phase component
+│   ├── RomanticPreloader.tsx   # Loading screen
+│   └── ui/                     # shadcn/ui components
+├── .env.local              # Database credentials
+└── README.md
 ```
 
-## 🎯 Key Implementation Details
+## 💖 Author
 
-### Unclickable "No" Button Logic
-```typescript
-const moveNoButton = () => {
-  const container = containerRef.current.getBoundingClientRect();
-  const newX = Math.random() * (container.width - buttonWidth);
-  const newY = Math.random() * (container.height - buttonHeight);
-  setNoButtonPosition({ x: newX, y: newY });
-};
-```
+**Spira** - [spira@novyrix.com](mailto:spira@novyrix.com)
 
-### Confetti Celebration
-Uses `canvas-confetti` library to create a 5-second confetti explosion from multiple angles when the date is confirmed.
+Crafted with ❤️ for Valentine's Day 2026
 
-### Compliment Engine
-Rotates through 15+ pre-written romantic compliments, ensuring variety and genuine sentiment.
+## 📄 License
 
-## 🎨 Styling Philosophy
+This project is personal and proprietary. Built with love for a special someone. 💕
 
-- **Color Palette**: Pink and red gradients for Valentine's theme
-- **Interactive Elements**: Hover effects and smooth transitions
-- **Responsive Design**: Mobile-friendly layout
-- **Playful UI**: Large buttons, emoji usage, and animated elements
+---
 
-## 📝 Development Commands
+**Repository**: [github.com/novyrix/play](https://github.com/novyrix/play)  
+**Production**: [play.novyrix.com](https://play.novyrix.com)
 
 ```bash
 # Development server
